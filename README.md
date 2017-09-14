@@ -2,6 +2,7 @@
 
 ## Links
 
+* developers.google.com/Apps-Script
 * https://github.com/entaq
 * https://github.com/entaq/GoogleAppsScript
 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types
