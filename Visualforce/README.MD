@@ -8,3 +8,5 @@
 * A string that represents an address. For example, "1 Market Street, San Francisco, CA". The address is geocoded to determine its latitude and longitude.
 * A string that represents a JSON object with latitude and longitude attributes that specify location coordinates. For example, `"{latitude: 37.794, longitude: -122.395}"`.
 * An Apex map object of type `Map<String, Double>`, with latitude and longitude keys to specify location coordinates.
+* To display up to 100 markers, add child <apex:mapMarker> components.
+* The map’s center location value is provided as a street address, not a geolocation. The mapping service looks up the latitude and longitude for the address. This process is called geocoding. You can include up to 10 geocoded addresses to a map, either as center attributes or as markers added with `<apex:mapMarker>` components.
