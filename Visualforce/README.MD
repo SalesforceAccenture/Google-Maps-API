@@ -18,5 +18,5 @@
 * he map marker title attribute lets you display a small amount of information when a user hovers over the marker. To display more information or have more control over how it’s formatted, use an info window instead of or in addition to the title attribute.
 * You can display complete details for a contact’s address, formatted for optimal display. You can add a clickable telephone
 link or even display a profile photo for objects that have one.
-* To add an info window to a map marker, add an `<apex:mapInfoWindow>` component as a child component of the associated <apex:mapMarker>. The body of the <apex:mapInfoWindow> component is displayed in the info window when users click
+* To add an info window to a map marker, add an `<apex:mapInfoWindow>` component as a child component of the associated `<apex:mapMarker>`. The body of the `<apex:mapInfoWindow>` component is displayed in the info window when users click
 or tap the marker, and can be Visualforce markup, HTML and CSS, or plain text.
