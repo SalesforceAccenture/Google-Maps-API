@@ -1,0 +1,7 @@
+<apex:page >
+    <h1>Salesforce in San Francisco</h1>
+    <!-- Display the address on a map -->
+    <apex:map width="600px" height="400px" mapType="roadmap" zoomLevel="16"
+        center="One Market Street, San Francisco, CA">
+    </apex:map>
+</apex:page>
