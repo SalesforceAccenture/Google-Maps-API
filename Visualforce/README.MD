@@ -13,3 +13,4 @@
 * The mapType value is “roadmap”, a standard street map. Other options are “satellite” and “hybrid”.
 * You can have up to 10 geocoded address lookups per map. Lookups for both the center attribute of the <apex:map> component and the position attribute of the <apex:mapMarker> component count against this limit. To display more markers, provide position values that don’t require geocoding. Locations that exceed the geocoding limit are skipped.
 * The center and position attributes are passed as a Visualforce expression that concatenates address elements to provide an address string that can be geocoded.
+* Visualforce maps can be resource-intensive which can cause memory issues within mobile browsers and the Salesforce1 app. Maps with many markers or large images used as custom markers can further increase memory consumption. If you plan to deploy Visualforce maps in pages that are used in mobile contexts, be sure to test those pages thoroughly.
