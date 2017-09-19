@@ -6,3 +6,5 @@
 * Addresses that need geocoding—that is, locations that don’t include values for latitude and longitude—are sent to a third-party service for geocoding. These addresses aren’t associated with your organization, and no other data is sent other than what you provide in your Visualforce markup. However, if your organization requires strict control of data shared outside of Salesforce, don’t use the geocoding feature of Visualforce maps.
 * The center attribute defines the point around which the map is centered. You can provide center values in several formats.
 * A string that represents an address. For example, "1 Market Street, San Francisco, CA". The address is geocoded to determine its latitude and longitude.
+* A string that represents a JSON object with latitude and longitude attributes that specify location coordinates. For example, "{latitude: 37.794, longitude: -122.395}".
+* An Apex map object of type Map<String, Double>, with latitude and longitude keys to specify location coordinates.
