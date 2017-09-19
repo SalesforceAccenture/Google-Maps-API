@@ -22,3 +22,5 @@ link or even display a profile photo for objects that have one.
 or tap the marker, and can be Visualforce markup, HTML and CSS, or plain text.
 * By default, only one info window displays at a time. When you click another marker, the first info window closes, and the new info window opens. To display multiple info windows at once, set showOnlyActiveInfoWindow to false on the containing
 `<apex:map>` component.
+* he JavaScript block at the beginning illustrates how you can access the browser’s built-in ability to ask for the user’s current location. This code updates a visible form field. However, you can easily use a hidden form field instead to avoid showing the raw latitude and longitude with its unlikely level of precision.
+* The first `<apex:pageBlockSection>` contains a short form for submitting the user’s location in the POSTBACK request. For illustration purposes it’s visible and requires a click, but that’s not required.
