@@ -1,0 +1,43 @@
+<apex:page controller="FindNearbyController" docType="html-5.0" >
+    <!-- JavaScript to get the user's current location, and pre-fill
+         the currentPosition form field. -->
+    <script type="text/javascript">
+        // Get location, fill in search field
+     function setUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(loc){
+                    var latlon = loc.coords.latitude + "," + loc.coords.longitude;
+                    var el = document.querySelector("input.currentPosition");
+                    el.value = latlon;
+}); }
+}
+        // Only set the user location once the page is ready
+     var readyStateCheckInterval = setInterval(function() {
+      if (document.readyState === "interactive") {
+          clearInterval(readyStateCheckInterval);
+          setUserLocation();
+} }, 10);
+</script>
+    <apex:pageBlock >
+        <!-- Form field to send currentPosition in request. You can make it
+             an <apex:inputHidden> field to hide it. -->
+        <apex:pageBlockSection >
+            <apex:form >
+                <apex:outputLabel for="currentPosition">Find Nearby</apex:outputLabel>
+                <apex:input size="30"
+                     html-placeholder="Attempting to obtain your position..."
+                     id="currentPosition" styleClass="currentPosition"
+                     value="{!currentPosition}" />
+                <apex:commandButton action="{!findNearby}" value="Go!"/>
+            </apex:form>
+        </apex:pageBlockSection>
+        <!-- Map of the results -->
+        <apex:pageBlockSection rendered="{!resultsAvailable}" title="Locations">
+            <apex:map width="600px" height="400px">
+                <apex:repeat value="{!locations}" var="pos">
+                    <apex:mapMarker position="{!pos}"/>
+                </apex:repeat>
+            </apex:map>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
