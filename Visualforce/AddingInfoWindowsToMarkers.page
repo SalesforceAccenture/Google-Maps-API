@@ -1,0 +1,38 @@
+<apex:page standardController="Account">
+  <!-- This page must be accessed with an Account Id in the URL. For example:
+       https://<salesforceInstance>/apex/AccountContactsCustomMarker?id=001D000000JRBet
+-->
+  <apex:pageBlock >
+    <apex:pageBlockSection title="Contacts For {! Account.Name }">
+      <apex:dataList value="{! Account.Contacts }" var="contact">
+        <apex:outputText value="{! contact.Name }" />
+      </apex:dataList>
+      <apex:map width="600px" height="400px" mapType="roadmap"
+  center="{!Account.BillingStreet},{!Account.BillingCity},{!Account.BillingState}">
+      <!-- Add markers for account contacts -->
+      <apex:repeat value="{! Account.Contacts }" var="ct">
+        <apex:mapMarker title="{! ct.Name }"
+          position="{! ct.MailingStreet },{! ct.MailingCity },{! ct.MailingState }">
+<!-- Add info window with contact details -->
+          <apex:mapInfoWindow >
+            <apex:outputPanel layout="block" style="font-weight: bold;">
+              <apex:outputText>{! ct.Name }</apex:outputText>
+            </apex:outputPanel>
+            <apex:outputPanel layout="block">
+              <apex:outputText>{! ct.MailingStreet }</apex:outputText>
+            </apex:outputPanel>
+            <apex:outputPanel layout="block">
+<apex:outputText>{! ct.MailingCity }, {! ct.MailingState }</apex:outputText>
+            </apex:outputPanel>
+            <apex:outputPanel layout="block">
+              <apex:outputLink value="{! 'tel://' + ct.Phone }">
+                  <apex:outputText>{! ct.Phone }</apex:outputText>
+              </apex:outputLink>
+            </apex:outputPanel>
+          </apex:mapInfoWindow>
+        </apex:mapMarker>
+      </apex:repeat>
+      </apex:map>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:page>
