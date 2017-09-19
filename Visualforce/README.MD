@@ -24,3 +24,4 @@ or tap the marker, and can be Visualforce markup, HTML and CSS, or plain text.
 `<apex:map>` component.
 * he JavaScript block at the beginning illustrates how you can access the browser’s built-in ability to ask for the user’s current location. This code updates a visible form field. However, you can easily use a hidden form field instead to avoid showing the raw latitude and longitude with its unlikely level of precision.
 * The first `<apex:pageBlockSection>` contains a short form for submitting the user’s location in the POSTBACK request. For illustration purposes it’s visible and requires a click, but that’s not required.
+* In the second `<apex:pageBlockSection>`, the map itself is simple, requiring only five lines of code. All the complexity is in the `{!locations}` expression, which accesses a property in the Apex controller.
