@@ -1,3 +1,5 @@
+// Apex Controller
+
 global with sharing class FindNearbyClients {
 
     public FindNearbyClients(ApexPages.StandardSetController controller) { }
