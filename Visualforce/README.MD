@@ -14,3 +14,9 @@
 * You can have up to 10 geocoded address lookups per map. Lookups for both the center attribute of the <apex:map> component and the position attribute of the <apex:mapMarker> component count against this limit. To display more markers, provide position values that don’t require geocoding. Locations that exceed the geocoding limit are skipped.
 * The center and position attributes are passed as a Visualforce expression that concatenates address elements to provide an address string that can be geocoded.
 * Visualforce maps can be resource-intensive which can cause memory issues within mobile browsers and the Salesforce1 app. Maps with many markers or large images used as custom markers can further increase memory consumption. If you plan to deploy Visualforce maps in pages that are used in mobile contexts, be sure to test those pages thoroughly.
+* Info windows allow you to show extra details on a map. Info windows appear when a user clicks or taps the marker.
+* he map marker title attribute lets you display a small amount of information when a user hovers over the marker. To display more information or have more control over how it’s formatted, use an info window instead of or in addition to the title attribute.
+* You can display complete details for a contact’s address, formatted for optimal display. You can add a clickable telephone
+link or even display a profile photo for objects that have one.
+* To add an info window to a map marker, add an `<apex:mapInfoWindow>` component as a child component of the associated <apex:mapMarker>. The body of the <apex:mapInfoWindow> component is displayed in the info window when users click
+or tap the marker, and can be Visualforce markup, HTML and CSS, or plain text.
