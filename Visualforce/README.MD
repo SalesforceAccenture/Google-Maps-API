@@ -10,3 +10,5 @@
 * An Apex map object of type `Map<String, Double>`, with latitude and longitude keys to specify location coordinates.
 * To display up to 100 markers, add child <apex:mapMarker> components.
 * The map’s center location value is provided as a street address, not a geolocation. The mapping service looks up the latitude and longitude for the address. This process is called geocoding. You can include up to 10 geocoded addresses to a map, either as center attributes or as markers added with `<apex:mapMarker>` components.
+* The mapType value is “roadmap”, a standard street map. Other options are “satellite” and “hybrid”.
+* You can have up to 10 geocoded address lookups per map. Lookups for both the center attribute of the <apex:map> component and the position attribute of the <apex:mapMarker> component count against this limit. To display more markers, provide position values that don’t require geocoding. Locations that exceed the geocoding limit are skipped.
