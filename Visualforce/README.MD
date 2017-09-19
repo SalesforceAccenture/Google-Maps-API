@@ -20,3 +20,5 @@
 link or even display a profile photo for objects that have one.
 * To add an info window to a map marker, add an `<apex:mapInfoWindow>` component as a child component of the associated `<apex:mapMarker>`. The body of the `<apex:mapInfoWindow>` component is displayed in the info window when users click
 or tap the marker, and can be Visualforce markup, HTML and CSS, or plain text.
+* By default, only one info window displays at a time. When you click another marker, the first info window closes, and the new info window opens. To display multiple info windows at once, set showOnlyActiveInfoWindow to false on the containing
+`<apex:map>` component.
